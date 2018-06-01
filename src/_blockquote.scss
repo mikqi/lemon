@@ -1,0 +1,14 @@
+blockquote {
+  border-left: 0.4rem solid $color-primary;
+  padding: 1rem 2rem;
+  background-color: $color-tertiary;
+
+  *:last-of-type {
+    margin-bottom: 0;
+  }
+
+  cite {
+    display: block;
+    text-align: right;
+  }
+}

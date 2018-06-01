@@ -1,0 +1,13 @@
+//  JAKIS PADDING?
+.container {
+  margin: 0 auto;
+  max-width: 120rem;
+
+  & .medium {
+    width: 100rem;
+  }
+
+  & .small {
+    width: 80rem;
+  }
+}

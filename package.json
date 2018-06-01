@@ -1,0 +1,39 @@
+{
+  "name": "lemon",
+  "version": "0.0.1",
+  "description": "A minimalist CSS framework",
+  "homepage": "https://github.com/appalaszynski/lemon#readme",
+  "author": "appalaszynski",
+  "keywords": [
+    "bootstrap",
+    "css3",
+    "flexbox",
+    "front-end",
+    "html",
+    "html5",
+    "mobile",
+    "postcss",
+    "sass",
+    "scss",
+    "css",
+    "minimal",
+    "responsive",
+    "framework"
+  ],
+  "scripts": {
+    "watch": "gulp sass:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appalaszynski/lemon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/appalaszynski/lemon/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-watch": "^5.0.0"
+  }
+}

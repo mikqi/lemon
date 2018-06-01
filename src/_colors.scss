@@ -1,0 +1,13 @@
+$color-initial: #ffffff;
+$color-primary: #dbbb2b;
+$color-primary-dark: darken($color-primary, 10%);
+$color-secondary: #606c76;
+$color-tertiary: rgb(246, 246, 246);
+
+
+// Grid
+$grid-margin-bottom: 8rem;
+$grid-width: 114rem;
+$grid-gutter-vertical: 8rem;
+$grid-gutter-vertical-small: 6rem;
+$grid-gutter-horizontal: 6rem;

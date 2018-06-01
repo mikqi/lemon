@@ -1,0 +1,11 @@
+a { //TODO: Dodać visited i link
+  color: $color-primary;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-primary-dark;
+    outline: 0;
+  }
+}
