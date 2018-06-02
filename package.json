@@ -1,8 +1,8 @@
 {
   "name": "lemon",
   "version": "0.0.1",
-  "description": "Minimal and responsive CSS framework for clean starting point",
-  "homepage": "https://github.com/appalaszynski/lemon#readme",
+  "description": "Minimal and responsive CSS framework for fast building websites",
+  "homepage": "https://appalaszynski.github.io/lemon/",
   "author": "appalaszynski",
   "keywords": [
     "bootstrap",
@@ -21,7 +21,7 @@
     "framework"
   ],
   "scripts": {
-    "watch": "gulp sass:watch"
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -34,11 +34,10 @@
   "devDependencies": {
     "autoprefixer": "^8.5.2",
     "cssnano": "^3.10.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.2.3",
     "gulp-sass": "^4.0.1",
-    "gulp-sourcemaps": "^2.6.4",
     "gulp-watch": "^5.0.0"
   }
 }

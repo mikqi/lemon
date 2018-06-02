@@ -1,34 +1,35 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const watch = require('gulp-watch');
+const gulp         = require('gulp');
+const sass         = require('gulp-sass');
+const watch        = require('gulp-watch');
 const postcss      = require('gulp-postcss');
-const sourcemaps   = require('gulp-sourcemaps');
-const cssnano = require('cssnano');
+const cssnano      = require('cssnano');
 const autoprefixer = require('autoprefixer');
-const rename = require('gulp-rename');
-
-var plugins = [
-  autoprefixer({ browsers: ['last 10 version'] }),
-  cssnano(),
-];
+const rename       = require('gulp-rename');
 
 gulp.task('sass', () => {
   return gulp.src('./src/lemon.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-    .pipe(postcss([autoprefixer({ browsers: ['last 1 version'] })]))
-    .pipe(gulp.dest('./dist')) //unminified
-    .pipe(postcss([cssnano()]))
-    .pipe(sourcemaps.write('./'))
+    .pipe(sass({
+      outputStyle: 'expanded',
+    }).on('error', sass.logError))
+    .pipe(postcss([
+      autoprefixer({
+        browsers: ['last 5 version'],
+      })
+    ]))
+    .pipe(gulp.dest('./dist')) // unminified version
+    .pipe(postcss([
+      autoprefixer({
+        browsers: ['last 5 version'],
+      }),
+      cssnano(),
+    ]))
     .pipe(rename({
-      suffix: '.min'
+      suffix: '.min',
     }))
-    .pipe(gulp.dest('./dist')) // minified
+    .pipe(gulp.dest('./dist')) // minified version
+    .pipe(gulp.dest('./docs/assets')) // docs
 })
 
-gulp.task('sass:watch', () => {
-  gulp.start('sass');
-  return watch('./src/**/*.scss', () => {
-    gulp.start('sass');
-  });
-})
+gulp.task('watch', gulp.series('sass', () => {
+  watch('./src/**/*.scss', gulp.series('sass'));
+}))
