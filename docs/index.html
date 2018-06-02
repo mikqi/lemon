@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>Lemon - Minimal and responsive CSS framework for fast building websites</title>
+  <meta name="description" content="Lemon is a minimalistic, open source and 100% responsive CSS framework great as starting point for creating websites and UI.">
+  
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:url" content="/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lemon - Minimal and responsive CSS framework for fast building websites">
+  <meta property="og:description" content="Lemon is a minimalistic, open source and 100% responsive CSS framework great as starting point for creating websites and UI.">
+  <meta property="og:image" content="images/thumbnail.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="assets/lemon.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <nav>
+
+    <div class="container">
+
+      <div class="nav-container">
+
+        <div class="logo-box">
+          <img class="logo-small" src="assets/logo.png" alt="Lemon logo">
+          <span>Lemon</span>
+        </div>
+
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#">Get started</a>
+          </li>
+          <li>
+            <a href="https://github.com/appalaszynski/lemon">Github</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+   
+    <img class="logo" src="assets/logo.png" alt="Lemon logo">
+    <h1>Lemon</h1>
+    <h4 style="max-width: 400px; text-align: center;">Minimal and responsive CSS framework for fast building websites</h4>
+    <div>
+      <a href="#" class="btn">Get Started</a>
+      <a href="https://github.com/appalaszynski/lemon" class="btn btn-outline">Github</a>
+    </div>
+  </header>
+
+  <section class="container small section">
+    <h2>About</h2>
+    <p><strong>Lemon</strong> provides minimal setup of styles such as grid system, buttors and forms. I made this framework for the purpose of learning stuff like CSS and SASS  but if someone of want to use it or contribute to if I will be really happy 😁</p>
+    <p>Also check my <a href="https://github.com/appalaszynski">Github account</a> for more open-source projects!</p>
+  </section>
+
+  <section class="container small section">
+    <h2>Containers</h2>
+    <p>You can choose from three container sizes, that are centered horizontaly by left and right padding and shrinks with the browser. Any content without a container will span full browser width.</p>
+    <pre><code>&lt;div class=&quot;container&quot;&gt;Large&lt;/div&gt;
+&lt;div class=&quot;container medium&quot;&gt;Medium&lt;/div&gt;
+&lt;div class=&quot;container small&quot;&gt;Small&lt;/div&gt;</code></pre>
+    <table>
+      <thead>
+        <tr>
+          <th>Small</th>
+          <th>Medium</th>
+          <th>Large</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1000px</td>
+          <td>1000px</td>
+          <td>1000px</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="container small section">
+    <h2>Grid</h2>
+    <p>Grid system is based on <strong>Flexbox</strong>. Simply add columns you want in a row, and they'll evenly take up the available space. If you want three columns, add three columns, if you want five columns, add five columns. Do not forger to wrap columns in <code>row</code> container!</p>
+    <div class="row">
+      <div class="column"><span class="column-demo">.column</span></div>
+    </div>
+    <div class="row">
+      <div class="column"><span class="column-demo">.column</span></div>
+      <div class="column"><span class="column-demo">.column</span></div>
+      <div class="column"><span class="column-demo">.column</span></div>
+      <div class="column"><span class="column-demo">.column</span></div>
+    </div>
+    <pre><code>&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;column&quot;&gt;.column&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;column&quot;&gt;.column&lt;/div&gt;
+  &lt;div class=&quot;column&quot;&gt;.column&lt;/div&gt;
+  &lt;div class=&quot;column&quot;&gt;.column&lt;/div&gt;
+  &lt;div class=&quot;column&quot;&gt;.column&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+  </section>
+
+  <section class="container small section">
+    <h2>Typography</h2>
+    <p>Font size is based on <code>rem</code> unit which stands for <i>"root em"</i> - it is relative to <code>html</code> element. Lemon define <code>html</code> elements font size as 62.5% which gives us 10px.
+      Thanks for that You can easily build layout based on <code>rem</code> unit when 1rem is equal to 10px.
+      Lemon use <a href="https://fonts.google.com/specimen/Open+Sans">Open Sans</a> font.</p>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <a href="#">Anchor</a>
+    <em>Emphasis</em>
+    <small>Small</small>
+    <strong>Strong</strong>
+    <u>Underline</u>
+    <p>Paraghaph</p>
+  </section>
+
+  <section class="container small section">
+    <h2>Blockquotes</h2>
+    <p>Blockquote is set to have a left border. A cite will be right aligned and italicized.</p>
+    <blockquote>
+      <p>Tell me and I forget, teach me and I may remember, involve me and I learn.</p>
+      <cite>Benjamin Franklin</cite>
+    </blockquote>
+    <pre><code>&lt;blockquote&gt;
+  &lt;p&gt;Tell me and I forget, teach me and I may remember, involve me and I learn.&lt;/p&gt;
+  &lt;cite&gt;Benjamin Franklin&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+  </section>
+
+  <section class="container small section">
+    <h2>Buttons</h2>
+    <p>Button elements, links with a button class, and input elements should all render exactly the same.
+      You can choose from two styles: basic (with <code>.btn</code> class) and outlined (with
+      <code>.btn-outline</code> class).</p>
+    <div>
+      <button>Button</button>
+      <a href="#" class="btn">Link</a>
+      <input type="button" value="Input">
+      <input type="submit" value="Submit">
+      <button disabled>Disabled</button>
+    </div>
+    <div>
+      <button class="btn-outline">Button</button>
+      <a href="#" class="btn btn-outline">Link</a>
+      <input type="button" class="btn-outline" value="Input">
+      <input type="submit" class="btn-outline" value="Submit">
+      <button class="btn-outline" disabled>Disabled</button>
+    </div>
+  </section>
+
+  <section class="container small section">
+    <h2>Code</h2>
+    <p>To represent fragment of computer code wrap it in <code>code</code> element to look like this.
+    If You want to place blocks of preformatted code wrap <code>code</code> in <code>pre</code> element.</p>
+    <pre><code>class HelloWorld {
+  greet() {
+    console.log('Hello World!');
+  }  
+}</code></pre>
+  <pre><code>&lt;pre&gt;&lt;code&gt;
+  class HelloWorld {
+    greet() {
+      console.log('Hello World!');
+    }
+  }
+&lt;/code&gt;&lt;/pre&gt;</code></pre>
+  </section>
+
+  <section class="container medium section">
+    <h2>Forms</h2>
+    <form>
+        <label for="nameField">Name</label>
+        <input type="text" placeholder="CJ Patoilo" id="nameField">
+        <label for="ageRangeField">Age Range</label>
+        <select id="ageRangeField">
+          <option value="0-13">0-13</option>
+          <option value="14-17">14-17</option>
+          <option value="18-23">18-23</option>
+          <option value="24+">24+</option>
+        </select>
+        <label for="commentField">Comment</label>
+        <textarea placeholder="Hi CJ …" id="commentField"></textarea>
+        <div class="float-right">
+          <input type="checkbox" id="confirmField">
+          <label class="label-inline" for="confirmField">Send a copy to yourself</label>
+        </div>
+        <input class="button-primary" type="submit" value="Send">
+    </form>
+  </section>
+
+  <section class="container medium section">
+    <h2>Buttons</h2>
+  </section>
+
+  <section class="container medium section">
+    <h2>Buttons</h2>
+  </section>
+</body>
+</html>
