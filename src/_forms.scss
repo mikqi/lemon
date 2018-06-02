@@ -24,6 +24,8 @@ select {
   box-sizing: inherit;
   height: 3.8rem;
   padding: .6rem 1.0rem;
+  margin-bottom: 1.5rem;
+  color: $color-secondary;
 
   &:focus {
     border-color: $color-primary;
@@ -58,4 +60,12 @@ select {
 	display: inline-block;
 	font-weight: normal;
 	margin-left: .5rem;
+}
+
+// Placeholder Text 
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+	color: $color-secondary;
 }

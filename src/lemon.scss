@@ -1,20 +1,20 @@
 /**
- * Lemon v0.0.1 (https://github.com/appalaszynski/lemon))
+ * Lemon v0.0.1 (https://appalaszynski.github.io/lemon/))
  * Copyright (c) 2018 appalaszynski (https://github.com/appalaszynski)
  * Licensed under MIT (https://github.com/appalaszynski/lemon/blob/master/LICENSE)
  */
 
+@import 'variables';
 @import 'functions';
-@import 'colors';
-@import 'mixins';
+@import 'breakpoints';
 @import 'reset';
+@import 'containers';
+@import 'grid';
+@import 'utility';
 @import 'typography';
 @import 'buttons';
-@import 'containers';
 @import 'code';
 @import 'blockquote';
-@import 'breakpoints';
-@import 'grid';
 @import 'hr';
 @import 'link';
 @import 'forms';

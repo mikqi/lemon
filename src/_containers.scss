@@ -1,13 +1,14 @@
-//  JAKIS PADDING?
 .container {
   margin: 0 auto;
   max-width: 120rem;
+  padding: 0 2rem;
+  width: 100%;
 
-  & .medium {
-    width: 100rem;
+  &.medium {
+    max-width: 100rem;
   }
 
-  & .small {
-    width: 80rem;
+  &.small {
+    max-width: 80rem;
   }
 }

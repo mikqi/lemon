@@ -26,8 +26,6 @@ input[type='submit'] {
   text-transform: uppercase;
   text-decoration: none;
 
-  white-space: nowrap; //TODO: Co to jest?
-
   vertical-align: middle;
 
   &:focus,
@@ -35,6 +33,7 @@ input[type='submit'] {
     background-color: $color-primary-dark;
     border: 0.1rem solid $color-primary-dark;
     outline: 0;
+    color: $color-initial;
   }
 
   &:disabled {
