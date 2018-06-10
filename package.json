@@ -1,6 +1,6 @@
 {
-  "name": "lemon",
-  "version": "0.0.1",
+  "name": "lemoncss",
+  "version": "1.0.0",
   "description": "Minimal and responsive CSS framework for fast building websites",
   "homepage": "https://appalaszynski.github.io/lemon/",
   "author": "appalaszynski",
@@ -12,7 +12,6 @@
     "html",
     "html5",
     "mobile",
-    "postcss",
     "sass",
     "scss",
     "css",

@@ -1,8 +1,16 @@
-@charset "UTF-8";
 /**
- * Lemon v0.0.1 (https://github.com/appalaszynski/lemon))
+ * Lemon v1.0.0 (https://appalaszynski.github.io/lemon/))
  * Copyright (c) 2018 appalaszynski (https://github.com/appalaszynski)
  * Licensed under MIT (https://github.com/appalaszynski/lemon/blob/master/LICENSE)
+ */
+/**
+ * Responsive Breakpoint Manager 
+ *
+ * 0px - 600px:       Small
+ * 600px - 900px:     Medium
+ * 900px - 1100px:    Large
+ * 1800px - 2699px:   Huge
+ * 2800px - more:     Extra
  */
 /**
  * Basic reset of font-size, box-sizing, margin and padding.
@@ -13,9 +21,16 @@
  *    Therefore from now 1rem is equal to 10px.
  */
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: 62.5%;
   /* 1 */
+}
+
+@media (max-width: 56.25em) {
+  html {
+    font-size: 56.25%;
+  }
 }
 
 *,
@@ -23,7 +38,73 @@ html {
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 120rem;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.container.medium {
+  max-width: 100rem;
+}
+
+.container.small {
+  max-width: 80rem;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (max-width: 56.25em) {
+  .row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.column {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 0 1.0rem;
+}
+
+.column.column-50 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+
+.clearfix:after {
+  clear: both;
+  content: ' ';
+  display: table;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.mb {
+  margin-bottom: 2rem;
 }
 
 html {
@@ -33,8 +114,8 @@ html {
 }
 
 body {
-  color: #606c76;
-  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  color: #363c41;
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 1.6rem;
   font-weight: 300;
   line-height: 1.6;
@@ -91,6 +172,8 @@ h6 {
 }
 
 .btn,
+.btn:link,
+.btn:visited,
 button,
 input[type='button'],
 input[type='reset'],
@@ -98,7 +181,7 @@ input[type='submit'] {
   background-color: #dbbb2b;
   border: 0.1rem solid #dbbb2b;
   border-radius: 0.4rem;
-  color: #ffffff;
+  color: white;
   cursor: pointer;
   display: inline-block;
   font-size: 1.1rem;
@@ -109,11 +192,15 @@ input[type='submit'] {
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  white-space: nowrap;
   vertical-align: middle;
+  margin-bottom: 1rem;
 }
 
 .btn:focus, .btn:hover,
+.btn:link:focus,
+.btn:link:hover,
+.btn:visited:focus,
+.btn:visited:hover,
 button:focus,
 button:hover,
 input[type='button']:focus,
@@ -125,9 +212,12 @@ input[type='submit']:hover {
   background-color: #b4991f;
   border: 0.1rem solid #b4991f;
   outline: 0;
+  color: white;
 }
 
 .btn:disabled,
+.btn:link:disabled,
+.btn:visited:disabled,
 button:disabled,
 input[type='button']:disabled,
 input[type='reset']:disabled,
@@ -137,6 +227,10 @@ input[type='submit']:disabled {
 }
 
 .btn:disabled:focus, .btn:disabled:hover,
+.btn:link:disabled:focus,
+.btn:link:disabled:hover,
+.btn:visited:disabled:focus,
+.btn:visited:disabled:hover,
 button:disabled:focus,
 button:disabled:hover,
 input[type='button']:disabled:focus,
@@ -149,42 +243,54 @@ input[type='submit']:disabled:hover {
   border-color: #dbbb2b;
 }
 
-.btn.btn-outline,
-button.btn-outline,
-input[type='button'].btn-outline,
-input[type='reset'].btn-outline,
-input[type='submit'].btn-outline {
+.btn.outline,
+.btn:link.outline,
+.btn:visited.outline,
+button.outline,
+input[type='button'].outline,
+input[type='reset'].outline,
+input[type='submit'].outline {
   background-color: transparent;
   color: #dbbb2b;
 }
 
-.btn.btn-outline:focus, .btn.btn-outline:hover,
-button.btn-outline:focus,
-button.btn-outline:hover,
-input[type='button'].btn-outline:focus,
-input[type='button'].btn-outline:hover,
-input[type='reset'].btn-outline:focus,
-input[type='reset'].btn-outline:hover,
-input[type='submit'].btn-outline:focus,
-input[type='submit'].btn-outline:hover {
+.btn.outline:focus, .btn.outline:hover,
+.btn:link.outline:focus,
+.btn:link.outline:hover,
+.btn:visited.outline:focus,
+.btn:visited.outline:hover,
+button.outline:focus,
+button.outline:hover,
+input[type='button'].outline:focus,
+input[type='button'].outline:hover,
+input[type='reset'].outline:focus,
+input[type='reset'].outline:hover,
+input[type='submit'].outline:focus,
+input[type='submit'].outline:hover {
   color: #b4991f;
 }
 
-.btn.btn-outline:disabled:focus, .btn.btn-outline:disabled:hover,
-button.btn-outline:disabled:focus,
-button.btn-outline:disabled:hover,
-input[type='button'].btn-outline:disabled:focus,
-input[type='button'].btn-outline:disabled:hover,
-input[type='reset'].btn-outline:disabled:focus,
-input[type='reset'].btn-outline:disabled:hover,
-input[type='submit'].btn-outline:disabled:focus,
-input[type='submit'].btn-outline:disabled:hover {
+.btn.outline:disabled:focus, .btn.outline:disabled:hover,
+.btn:link.outline:disabled:focus,
+.btn:link.outline:disabled:hover,
+.btn:visited.outline:disabled:focus,
+.btn:visited.outline:disabled:hover,
+button.outline:disabled:focus,
+button.outline:disabled:hover,
+input[type='button'].outline:disabled:focus,
+input[type='button'].outline:disabled:hover,
+input[type='reset'].outline:disabled:focus,
+input[type='reset'].outline:disabled:hover,
+input[type='submit'].outline:disabled:focus,
+input[type='submit'].outline:disabled:hover {
   background-color: inherit;
   border-color: inherit;
   color: #dbbb2b;
 }
 
 .btn.btn-full,
+.btn:link.btn-full,
+.btn:visited.btn-full,
 button.btn-full,
 input[type='button'].btn-full,
 input[type='reset'].btn-full,
@@ -193,25 +299,12 @@ input[type='submit'].btn-full {
   width: 100%;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 120rem;
-}
-
-.container .medium {
-  width: 100rem;
-}
-
-.container .small {
-  width: 80rem;
-}
-
 code {
   background-color: #f6f6f6;
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+  font-size: 120%;
   border-radius: 0.4rem;
   margin: 0 0.2rem;
-  font-size: 90%;
 }
 
 pre {
@@ -219,6 +312,7 @@ pre {
   overflow-y: scroll;
   padding: 1rem;
   border-bottom: 0.4rem solid #dbbb2b;
+  margin-bottom: 2rem;
 }
 
 pre > code {
@@ -230,6 +324,7 @@ blockquote {
   border-left: 0.4rem solid #dbbb2b;
   padding: 1rem 2rem;
   background-color: #f6f6f6;
+  margin-bottom: 2rem;
 }
 
 blockquote *:last-of-type {
@@ -241,120 +336,26 @@ blockquote cite {
   text-align: right;
 }
 
-/**
- * Responsive Breakpoint Manager 
- *
- * 0px - 600px:       Small
- * 600px - 900px:     Medium
- * 900px - 1100px:    Large
- * 1800px - 2699px:   Huge
- * 2800px - more:     Extra
- */
-/**
- * Responsive Grid System
- *
- * My grid system uses rows and columns. It’s built with floats and clearfixes.
- * You are not forced into having a fixed number of columns across a whole page. You can have whatever you want and wherever you need it.
- *
- * Div with '.row' class is horizontaly centered container with width defined in '$grid-width' variable.
- * Inside '.row' div You can place previously defined columns in '$list-of-columns' map (remember that every map key has to be unique).
- * For example:
- * - '(1,3)' will create '.col-1-of-3' class which take one third of '.row' width.
- * - '(7,12)' will create '.col-7-of-12' class which take seven twelfths of '.row' width.
- *
- * If there is more that one column each of them (expect last one) will have right margin defined in '$grid-gutter-horizontal' variable.
- */
-.col-1-of-2 {
-  width: column-width(1, 2, 6rem);
-}
-
-.col-1-of-3 {
-  width: column-width(1, 3, 6rem);
-}
-
-.col-2-of-3 {
-  width: column-width(2, 3, 6rem);
-}
-
-.col-1-of-4 {
-  width: column-width(1, 4, 6rem);
-}
-
-.col-2-of-4 {
-  width: column-width(2, 4, 6rem);
-}
-
-.col-3-of-4 {
-  width: column-width(3, 4, 6rem);
-}
-
-.row {
-  margin: 0 auto;
-  max-width: 114rem;
-}
-
-.row::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media (max-width: 56.25em) {
-  .row--narrow {
-    padding: 0 2rem;
-    max-width: 60rem;
-  }
-}
-
-.row:not(:last-child) {
-  margin-bottom: 8rem;
-}
-
-@media (max-width: 56.25em) {
-  .row:not(:last-child) {
-    margin-bottom: 6rem;
-  }
-}
-
-@media (max-width: 68.75em) {
-  .row {
-    padding: 0 3rem;
-  }
-}
-
-[class^="col-"] {
-  float: left;
-}
-
-[class^="col-"]:not(:last-child) {
-  margin-right: 6rem;
-}
-
-@media (max-width: 56.25em) {
-  [class^="col-"]:not(:last-child) {
-    margin-right: 0;
-    margin-bottom: 6rem;
-  }
-}
-
-@media (max-width: 56.25em) {
-  [class^="col-"] {
-    width: 100% !important;
-  }
-}
-
 hr {
   margin: 3rem 0;
   border: 0;
   border-top: 0.1rem solid #dbbb2b;
 }
 
-a {
+a,
+a:link,
+a:visited {
   color: #dbbb2b;
   text-decoration: none;
 }
 
-a:hover, a:focus, a:active {
+a:hover, a:focus, a:active,
+a:link:hover,
+a:link:focus,
+a:link:active,
+a:visited:hover,
+a:visited:focus,
+a:visited:active {
   color: #b4991f;
   outline: 0;
 }
@@ -376,15 +377,21 @@ input:not([type]),
 textarea,
 select {
   width: 100%;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: transparent;
-  box-shadow: none;
-  border: 0.1rem solid #606c76;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 0.1rem solid #363c41;
   font-size: 1.6rem;
   border-radius: .4rem;
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
   height: 3.8rem;
   padding: .6rem 1.0rem;
+  margin-bottom: 1.5rem;
+  color: #363c41;
 }
 
 input[type='email']:focus,
@@ -425,8 +432,6 @@ input[type='radio'] {
 }
 
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAYAAAA/33wPAAAAvklEQVQoFY2QMQqEMBBFv7ERa/EMXkGw11K8QbDXzuN4BHv7QO6ifUgj7v4UAdlVM8Uwf+b9YZJISnlqrfEUZVlinucnBGKaJgghbiHOyLyFKIoCbdvecpyReYvo/Ma2bajrGtbaC58kCdZ1RZ7nl/4/4d5EsO/7nzl7IUtodBexMMagaRrs+06JLMvcNWmaOv2W/C/TMAyD58dxROgSmvxFFMdxoOs6lliWBXEcuzokXRbRoJRyvqqqQvye+QDMDz1D6yuj9wAAAABJRU5ErkJggg==) right center no-repeat;
 }
 
@@ -434,6 +439,14 @@ select {
   display: inline-block;
   font-weight: normal;
   margin-left: .5rem;
+  margin-bottom: 0;
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-moz-placeholder,
+:-ms-input-placeholder {
+  color: #363c41;
 }
 
 dl,
@@ -442,6 +455,7 @@ ul {
   list-style: none;
   margin-top: 0;
   padding-left: 0;
+  margin-bottom: 2rem;
 }
 
 dl dl,
@@ -453,8 +467,7 @@ ol ul,
 ul dl,
 ul ol,
 ul ul {
-  font-size: 90%;
-  margin: 1.5rem 0 1.5rem 3.0rem;
+  margin: 0 0 0 1.5rem;
 }
 
 ol {
@@ -467,4 +480,24 @@ ul {
 
 dd {
   -webkit-margin-start: 40px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+th,
+td {
+  text-align: left;
+  border-bottom: 0.1rem solid #dbbb2b;
+  padding: 1rem;
+}
+
+thead th {
+  border-bottom: 2px solid #dbbb2b;
 }
