@@ -37,11 +37,10 @@ nav {
   flex-grow: 1;
 }
 
-
-
 .nav-list {
   list-style: none;
   display: flex;
+  margin-bottom: 0;
 }
 
 .nav-item {
@@ -49,11 +48,11 @@ nav {
 }
 
 .section {
-  padding-bottom: 10rem;
+  padding-top: 10rem;
 }
 
-.section:first-of-type {
-  padding-top: 10rem;
+.section:last-of-type {
+  padding-bottom: 10rem;
 }
 
 .column-demo {
