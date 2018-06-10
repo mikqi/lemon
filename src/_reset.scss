@@ -11,7 +11,7 @@ html {
   box-sizing: border-box;
   font-size: px-to-percent(10px); /* 1 */
 
-  @include respond('small') {
+  @include respond('medium') {
     font-size: px-to-percent(9px);
   }
 }

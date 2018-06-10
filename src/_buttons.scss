@@ -1,4 +1,6 @@
 .btn,
+.btn:link,
+.btn:visited,
 button,
 input[type='button'],
 input[type='reset'],
@@ -27,6 +29,7 @@ input[type='submit'] {
   text-decoration: none;
 
   vertical-align: middle;
+  margin-bottom: 1rem;
 
   &:focus,
   &:hover {
@@ -47,7 +50,7 @@ input[type='submit'] {
     }
   }
 
-  &.btn-outline {
+  &.outline {
     background-color: transparent;
     color: $color-primary;
    
