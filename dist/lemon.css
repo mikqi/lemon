@@ -171,6 +171,12 @@ h6 {
   line-height: 1.4;
 }
 
+input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
 .btn,
 .btn:link,
 .btn:visited,
